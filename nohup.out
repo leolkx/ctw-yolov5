@@ -1,0 +1,10 @@
+usage: train.py [-h] [--weights WEIGHTS] [--cfg CFG] [--data DATA] [--hyp HYP]
+                [--epochs EPOCHS] [--batch-size BATCH_SIZE]
+                [--img-size IMG_SIZE [IMG_SIZE ...]] [--rect]
+                [--resume [RESUME]] [--nosave] [--notest] [--noautoanchor]
+                [--evolve] [--bucket BUCKET] [--cache-images]
+                [--image-weights] [--device DEVICE] [--multi-scale]
+                [--single-cls] [--adam] [--sync-bn] [--local_rank LOCAL_RANK]
+                [--logdir LOGDIR] [--name NAME] [--log-imgs LOG_IMGS]
+                [--workers WORKERS]
+train.py: error: unrecognized arguments: train.log
