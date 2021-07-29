@@ -389,12 +389,12 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='./weights/yolov5x.pt', help='initial weights path')
+    parser.add_argument('--weights', type=str, default='/home/lkx/yolov5-master/weights/yolov5x.pt', help='initial weights path')
     parser.add_argument('--cfg', type=str, default='models/yolov5x.yaml', help='model.yaml path')
-    parser.add_argument('--data', type=str, default='data/ctw2.yaml', help='data.yaml path')
+    parser.add_argument('--data', type=str, default='data/ctw4.yaml', help='data.yaml path')
     parser.add_argument('--hyp', type=str, default='data/hyp.scratch.yaml', help='hyperparameters path')
-    parser.add_argument('--epochs', type=int, default=1200)
-    parser.add_argument('--batch-size', type=int, default=8, help='total batch size for all GPUs')
+    parser.add_argument('--epochs', type=int, default=300)
+    parser.add_argument('--batch-size', type=int, default=12, help='total batch size for all GPUs')
     parser.add_argument('--img-size', nargs='+', type=int, default=[672, 672], help='[train, test] image sizes')
     parser.add_argument('--rect', action='store_true', help='rectangular training')
     parser.add_argument('--resume', nargs='?', const=True, default=False, help='resume most recent training')

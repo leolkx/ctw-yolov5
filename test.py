@@ -110,6 +110,14 @@ def test(data,
             # Run model
             t = time_synchronized()
             inf_out, train_out = model(img, augment=augment)  # inference and training outputs
+            # print('shape')
+            # print(inf_out.shape)
+            # print('ceterx, cetery, w, h')
+            # print(inf_out[0][..., 0:4])  #  ceterx, cetery, w, h
+            # print('cls_conf')
+            # print(inf_out[0][..., 4])     #  cls_conf
+            # print('obj_conf')
+            # print(inf_out[0][..., 5:])    #  obj_conf
             t0 += time_synchronized() - t
 
             # Compute loss
@@ -274,12 +282,12 @@ def test(data,
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog='test.py')
-    parser.add_argument('--weights', nargs='+', type=str, default='/home/lkx/yolov5-master/runs/train/exp5/weights/best.pt', help='model.pt path(s)')
-    parser.add_argument('--data', type=str, default='data/ctw.yaml', help='*.data path')
-    parser.add_argument('--batch-size', type=int, default=4, help='size of each image batch')
-    parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
+    parser.add_argument('--weights', nargs='+', type=str, default="/home/lkx/yolov5-master/runs/train/exp11/weights/best.pt", help='model.pt path(s)')
+    parser.add_argument('--data', type=str, default='data/ctw2.yaml', help='*.data path')
+    parser.add_argument('--batch-size', type=int, default=8, help='size of each image batch')
+    parser.add_argument('--img-size', type=int, default=1216, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.001, help='object confidence threshold')
-    parser.add_argument('--iou-thres', type=float, default=0.65, help='IOU threshold for NMS')
+    parser.add_argument('--iou-thres', type=float, default=0.5, help='IOU threshold for NMS')
     parser.add_argument('--save-json', action='store_true', help='save a cocoapi-compatible JSON results file')
     parser.add_argument('--task', default='val', help="'val', 'test', 'study'")
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
